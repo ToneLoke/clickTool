@@ -1,0 +1,24 @@
+.Button {
+  background-color: rgb(83, 182, 208);
+  border: 2px  rgb(83, 182, 208) solid;
+  margin: 50px auto;
+  width: 50%;
+  padding: 10px 5px;
+  border-radius: 5px;
+  color: white;
+  -webkit-box-shadow: 7px 7px 26px -2px rgba(76,141,161,1);
+  -moz-box-shadow: 7px 7px 26px -2px rgba(76,141,161,1);
+  box-shadow: 7px 7px 26px -2px rgba(76,141,161,1);
+  text-decoration: none;
+}
+.Button:hover {
+  background: rgb(71, 157, 179);
+  border-color: rgba(71, 157, 179, 0.719);
+}
+.Button:active {
+  background: rgb(71, 157, 179);
+  border-color: rgba(71, 157, 179, 0.719);
+  -webkit-box-shadow: inset 0px 0px 10px rgb(173, 184, 187);
+     -moz-box-shadow: inset 0px 0px 10px rgb(173, 184, 187);
+          box-shadow: inset 0px 0px 10px rgb(173, 184, 187);
+}
