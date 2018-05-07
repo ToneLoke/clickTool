@@ -10,7 +10,7 @@ class App extends Component {
       <div className='App'>
         <header className='App-header'>
         <img src="https://clicktool.com/images/logo.png" className="App-logo" alt="logo" />
-          <h1 className='App-title'>ClickTools Challenge</h1>
+          <h1>ClickTools Challenge</h1>
         </header>
         <div className='App-intro'>
           <Route exact path='/' component={Home} />

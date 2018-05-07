@@ -7,7 +7,7 @@ class Home extends Component {
     return (
 
         <div>
-          <div ><Link className='Button' to='/member'>Create Member</Link></div>
+          <div id="create-member"><Link className='Button' to='/member'>Create Member</Link></div>
           <img id="yellow-gear" src="https://clicktool.com/images/yellow-gear.png" />
         </div>
     )
