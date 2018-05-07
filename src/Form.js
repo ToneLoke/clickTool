@@ -33,7 +33,13 @@ class Form extends Component {
       body: JSON.stringify(this.state)
     })
     .then( res => res.json() )
-    .then( data => console.log(data))
+    // request response
+    .then( data => {
+      this.props.history.push({
+        pathname: '/success',
+        state: data
+      })
+    })
     .catch( err => console.log(err))
   }
 
@@ -62,7 +68,6 @@ class Form extends Component {
               <input onChange={this.handleChange} name="company" type="text" placeholder="Company" />
               <input onChange={this.handleChange} name="realm" type="text" placeholder="Realm" />
             </div>
-
             <div className ="cntr">
                 <label for="isCitizen" className="label-cbx">
                   <input id="isCitizen" name="isCitizen" onChange={this.handleChange} type="checkbox" className="invisible"/>
