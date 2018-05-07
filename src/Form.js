@@ -3,29 +3,41 @@ import './Form.css'
 
 class Form extends Component {
   state = {
-    isCitizen: null,
-    didAgreeToTerms: null,
-    didAgreeToPrivacyPolicy: null,
-    didReadWhitePaper: null,
+    isCitizen: false,
+    didAgreeToTerms: false,
+    didAgreeToPrivacyPolicy: false,
+    didReadWhitePaper: false,
     firstname: "",
     lastname: "",
     dob: "",
-    phone: null,
+    phone: false,
     country: "",
     publicWalletAddress: "",
     company: "",
-    isContributionMoreThenTwelve: null,
-    isContributionUsd: null,
+    isContributionMoreThenTwelve: false,
+    isContributionUsd: false,
     realm: "",
     username: "",
-    email: ""
+    email: "",
+    password: ""
   }
   handleSubmit = (e) => {
-    e.preventDefault()
-
+    e.preventDefault(e)
+    fetch("http://18.221.203.247/api/members",{
+      method: "POST",
+      headers: {
+        "content-type":"application/json",
+        "cache-control":"no-cache",
+        "accept":"*/*",
+      },
+      body: JSON.stringify(this.state)
+    })
+    .then( res => res.json() )
+    .then( data => console.log(data))
+    .catch( err => console.log(err))
   }
+
   handleChange = (e) => {
-    console.log("handle change", e)
     if(e.target.type === "checkbox"){
       this.setState({[e.target.name]: e.target.checked})
     }else{
@@ -36,12 +48,13 @@ class Form extends Component {
     return (
       <div>
           <h3 className='App-title'>Member Form</h3>
-          <form className="App-form">
+          <form className="App-form" onSubmit={this.handleSubmit}>
             <div className="text-inputs">
               <input onChange={this.handleChange} name="firstname" type="text" placeholder="First Name"/>
               <input onChange={this.handleChange} name="lastname" type="text" placeholder="Last Name"/>
               <input onChange={this.handleChange} name="username" type="text" placeholder="Username" />
               <input onChange={this.handleChange} name="email" type="email" placeholder="Email" />
+              <input onChange={this.handleChange} name="password" type="password" placeholder="Password" />
               <input onChange={this.handleChange} name="dob" type="date" placeholder="Date of Birth MM/DD/YY"/>
               <input onChange={this.handleChange} name="phone" type="number" placeholder="1112223333" />
               <input onChange={this.handleChange} name="publicWalletAddress" type="text" placeholder="Address" />

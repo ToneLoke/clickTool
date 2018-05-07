@@ -1,4 +1,4 @@
-input[type="text"], input[type="email"], input[type="number"], input[type="date"]{
+input[type="text"], input[type="email"], input[type="number"], input[type="date"], input[type="password"]{
   background: transparent none repeat scroll 0 0;
   border-color: -moz-use-text-color -moz-use-text-color #2cb8d1;
   border-radius: 5px;
@@ -13,7 +13,7 @@ input[type="text"], input[type="email"], input[type="number"], input[type="date"
   margin: 5px auto;
   width: 60%;
 }
-input[type="text"]:hover, input[type="email"]:hover, input[type="number"]:hover, input[type="date"]:hover{
+input[type="text"]:hover, input[type="email"]:hover, input[type="number"]:hover, input[type="date"]:hover, input[type="password"]:hover{
   border: 1px solid #20C2E0;
 }
 input[type="submit"]{
